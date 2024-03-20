@@ -62,10 +62,10 @@ repository_tree: master
 ## => Paths
 ##############################
 paths:
-  root    : # title link url, "/" (default)
-  home    : # home layout url, "/" (default)
-  archive : # "/archive.html" (default)
-  rss     : # "/feed.xml" (default)
+  root    :/ # title link url, "/" (default)
+  home    : /# home layout url, "/" (default)
+  archive : /# "/archive.html" (default)
+  rss     : /# "/feed.xml" (default)
 
 
 ## => Post
@@ -85,7 +85,7 @@ toc:
 ##############################
 ## Mathjax
 mathjax: true # false (default), true
-mathjax_autoNumber: # false (default), true
+mathjax_autoNumber:true # false (default), true
 
 ## Mermaid
 mermaid: true # false (default), true
