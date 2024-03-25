@@ -7,7 +7,7 @@ tags: 计算方法
 ## 范数
 #### 内积的性质：
 
-1.非负性：$\lt x,x\gt \geq 0$ ,if and only if $x=0,\lt x,x\gt=0$
+1.非负性：$ \lt x,x\gt \geq 0 $ ,if and only if $x=0,\lt x,x\gt=0$
 
 2.对称性：$\lt x,y \gt =\lt y,x\gt$
 
