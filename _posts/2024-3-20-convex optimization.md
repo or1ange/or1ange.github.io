@@ -28,9 +28,8 @@ $|\lt x,y \gt |\leq||x||*||y||$
 
 不妨令x,y为单位向量，
   
-  *$0\leq||x-y||^2=\lt x-y,x-y\gt=2-2\lt x,y\gt$*
+  $0\leq||x-y||^2=\lt x-y,x-y\gt=2-2\lt x,y\gt$
 
 得到，
-
     $<x,y>\leq 1 ，将x/||x||，y/||y||代入其中，再根据齐次性，得到<x,y>\leq||x||*||y||，以-x代替x得到<x.y>\geq-||x||*||y||$
 *proved*
