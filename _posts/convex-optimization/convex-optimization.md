@@ -91,8 +91,11 @@ tips:**L-smooth** is telling ,the increasing speed of $f$ is dominant by a type 
 
 **proof**:
 $f(x^*)\leq f(y)\leq f(x)+\nabla f(x)^T(y-x)+\frac{L}{2}||y-x||^2$
+
 the right-side have  $inf$ ,when $y=x-\frac{\nabla f(x)}{L}$
+
 $f(x^*)<f(x)-\frac{1}{2L}||\nabla f(x)||^2$
+
 **proved.**
 
 # 无约束优化
@@ -142,7 +145,7 @@ when $x^k $ is $ x^*$,$\nabla f(x^k)=0$,(2nd is st.)
 
 $\nabla f(x^k+ad^k)\geq c_2\nabla f(x^k)$
 
- when **$c_1$ is small,$c_2$ is big**, this criteria is more easy to st.
+when **$c_1$ is small,$c_2$ is big**, this criteria is more easy to st.
 
 
 ### 梯度类方法（gradient method）
