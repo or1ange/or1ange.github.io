@@ -57,51 +57,62 @@ but the differently,
 
 ![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image.jpg)
 
-where $|*|_{m} $ is  the   norm   from  $ R^{m}$ 
+其中$\parallel_m$表示来自$R^m$空间的范数
+
+当m=n=p的时候，就是p范数，$l_2$是经常使用的，矩阵的$l_2$范数就是它的最大奇异值。
 
 
+对所有的算子范数：
 
-when m=n=p,got $l_p$ norm。$l_2$ norm is often used,the $l_2$ norm of matrix is its **max singular value**
+$$\parallel Ax \parallel_m \leq\parallel A\parallel_m\parallel x\parallel_n$$
 
-for all 算子norm：
-
-$||Ax||_{m}\leq||A||_{m,n}||x||_{n}$
 
 **ker-norm(核范数)**：
-$||A||_{*}=\sum\sigma_i$,where
-$\sigma_i$ is the **nozero singular value**. 
 
-We often constrain $||*||_{*}$to  ensure matrix **low-rank** like constraining $||*||_{1}$ to ensure vetcors **sparsity**(保证稀疏性)
+$$\parallel A\parallel_{*}=\sum\sigma_i$$
+
+
+这里的$\sigma_i$ 就是非零奇异值. 
+
+tips:我们经常限制一个矩阵的核范数大小来保证它的低秩性质（限制1-范数的大小来保证它的稀疏性）
+
+
 
 **矩阵内积(Frobenius内积)**
-$<A,B>:=tr(AB^{T})=\sum\sum a_{ij}b_{ij}$
 
-柯西-施瓦兹不等式 is also satisfied.
-$$|<A,B>|\leq||A||_{F}*||B||_{F}$$
+$$<A,B>:=tr(AB^{T})=\sum\sum a_{ij}b_{ij}$$
+
+柯西-施瓦兹不等式也是满足的：
+
+$$\vert <A,B>\vert \leq \parallel A\parallel_{F}*\parallel B\parallel_{F}$$
 
 ## 导数（derivative）
 **gradient**
 
-![alt text](image-1.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-1.jpg)
 
-![alt text](image-2.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-2.jpg)
 
-![alt text](image-3.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-3.jpg)
 
-we usually see gradient as a vetcor
+一般地，我们把梯度看作是列向量
 
-![alt text](image-4.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-4.jpg)
 
-![alt text](image-5.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-5.jpg)
 
 **proof**:
-定义一个函数:$g（t）=f(x+t(y-x)),t\in [0,1]$
+定义一个函数:
 
-$f(y)-f(x)-\nabla f(x)^T(y-x)=\int_{0}^{1} g^1(t)- g^1(0) dt$
-$=\int_{0}^{1} (\nabla f(x+t(y-x))-\nabla f(x))(y-x)^Tdt$
-$\leq\int_{0}^{1} |\nabla f(x+t(y-x))-\nabla f(x)|*|x-y|dt$
+$$g（t）=f(x+t(y-x)),t\in [0,1]$$
 
-$\leq \int_{0}^{1} Lt|y-x|^2dt=\frac{L}{2}|y-x|^2$
+$$f(y)-f(x)-\nabla f(x)^T(y-x)=\int_{0}^{1} g^1(t)- g^1(0) dt$$
+
+$$=\int_{0}^{1} (\nabla f(x+t(y-x))-\nabla f(x))(y-x)^Tdt$$
+
+$$\leq\int_{0}^{1} \vert \nabla f(x+t(y-x))-\nabla f(x)\vert*\vert x-y\vert dt$$
+
+$$\leq \int_{0}^{1} Lt\vert y-x\vert^2dt=\frac{L}{2}\vert y-x\vert^2$$
 
 **proved.**
 
@@ -113,9 +124,10 @@ tips:**L-光滑** 表明$f$的增长速度被一个二次函数所控制。
 
 **proof**:
 
-$f(x^*)\leq f(y)\leq f(x)+\nabla f(x)^T(y-x)+\frac{L}{2}||y-x||^2$
-the right-side have  $inf$ ,when $y=x-\frac{\nabla f(x)}{L}$
-$f(x^*)<f(x)-\frac{1}{2L}||\nabla f(x)||^2$
+$$f(x^*)\leq f(y)\leq f(x)+\nabla f(x)^T(y-x)+\frac{L}{2}||y-x||^2$$
+当 $y=x- \frac{ \nabla f(x)}{L}$,
+
+$$f(x^*)<f(x)-\frac{1}{2L}||\nabla f(x)||^2$$
 
 **proved.**
 
@@ -138,36 +150,38 @@ $$a_k=arg min_{a>0}f(x^k+ad^k)$$
 #### **Armijo criteria**:
 $$f(x^k+ad^k)\leq f(x^k)+c_1a\nabla f(x^k)^Td^k,where~~ c_1\in(0,1)$$
 
-tips: when $a$ or $c_1$ is small ,Armijo criteria is easy to st.
-To speed up convergence,**a（step-length）** can't be too small!
+tips: 当 $a$ 或 $c_1$ 很小,Armijo criteria 很容易满足
 
-here is a easy way to find good **$a_k$**
+为了加速收敛，步长$a$不能太少！
 
-![alt text](image-6.jpg)
+
+
+
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-6.jpg)
 
 #### **Goldstein criteria**:
 
 $$f(x^k+ad^k)\leq f(x^k)+ca  \nabla f(x^k)^Td^k$$
 $$f(x^k+ad^k)\geq f(x^k)+(1-c)a  \nabla f(x^k)^Td^k$$
 
-where $c\in(0,0.5)$
+$c\in(0,0.5)$
 
-tips:base on **Armijo criteria**,discard some **a（step-length）** which is too small.
+tips:基于**Armijo criteria**,丢弃过小步长
 
 #### **Wolfe criteria**:
 $$f(x^k+ad^k)\leq f(x^k)+c_1a  \nabla f(x^k)^Td^k$$
 
 $$\nabla f(x^k+ad^k)^Td^k\geq c_2\nabla f(x^k)^Td^k$$
 
-where $c_1,c_2\in(0,1),c_1<c_2$
+$c_1,c_2\in(0,1),c_1<c_2$
 
-tips:2nd is more important.
+tips:认真理解第二项.
 
-when $x^k $ is $ x^*$,$\nabla f(x^k)=0$,(2nd is st.)
+当$x^k$ is $x^*$,$\nabla f(x^k)=0$,(2nd is st.)
 
 $\nabla f(x^k+ad^k)\geq c_2\nabla f(x^k)$
 
- when **$c_1$ is small,$c_2$ is big**, this criteria is more easy to st.
+ 当$c_1$ 很小,$c_2$很大, 这个准则更容易被满足
 
 
 ### 梯度类方法（gradient method）
