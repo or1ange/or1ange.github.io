@@ -5,7 +5,7 @@ tags: 计算方法
 ---
 
 
-
+  
 # 基础知识
 ## 范数
 #### 内积的性质：
@@ -78,11 +78,11 @@ $$|<A,B>|\leq||A||_{F}*||B||_{F}$$
 ## 导数（derivative）
 **gradient**
 
-![alt text](image-1.jpg)
+![alt text](./image-1.jpg)
 
-![alt text](image-2.jpg)
+![alt text](./image-2.jpg)
 
-![alt text](image-3.jpg)
+![alt text](./image-3.jpg)
 
 we usually see gradient as a vetcor
 
