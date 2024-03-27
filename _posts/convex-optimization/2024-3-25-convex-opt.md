@@ -120,7 +120,7 @@ tips:**L-光滑** 表明$f$的增长速度被一个二次函数所控制。
 
 
 
-![alt text](image-7.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-7.jpg)
 
 **proof**:
 
