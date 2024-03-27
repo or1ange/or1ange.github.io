@@ -4,8 +4,8 @@ tags: 应用数学
 ---
 
 # 题目
-![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/丘赛note/d2e0a9a6e3d849bb5b0326ca46877cc.jpg)
-![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/丘赛note/5508bbfc201ccb2dd5ab87fc97709a1.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/数学note/d2e0a9a6e3d849bb5b0326ca46877cc.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/数学note/5508bbfc201ccb2dd5ab87fc97709a1.jpg)
 
 
 #### question1
@@ -138,6 +138,6 @@ notice:for any i， $a_{ii}>0$,so $x^TDx >0，so~~~a+2l>0$
 **keypoint**: i don't konw  ('qaq')
 
 **1**.![
-](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/丘赛note/8b5b733dd2c31dccccfce6284f2ca25.png)
+](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/数学note/8b5b733dd2c31dccccfce6284f2ca25.png)
 
 
