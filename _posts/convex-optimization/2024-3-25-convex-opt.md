@@ -53,12 +53,9 @@ $A_{m*n}的1-范数是A中所有元素绝对值的总和，F范数是(tr（A*A^T
 but the differently,
 
 **算子范数**：
-<div  align="center">
-<img src= "
-https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-1.jpg
-"/>
-</div>
-![alt text](./hello/2024-3-25-image.jpg)
+
+![test](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-1.jpg)
+
 
 $where||*||_{m} $ is  the   norm   from  $R^{m}$ 
 
