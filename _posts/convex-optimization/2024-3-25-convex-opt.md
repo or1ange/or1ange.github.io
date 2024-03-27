@@ -55,7 +55,7 @@ but the differently,
 **算子范数**：
 <div  align="center">
 <img src= "
-https://github.com/or1ange/or1ange.github.io/blob/master/_posts/convex-optimization/image-1.jpg
+https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-1.jpg
 "/>
 </div>
 ![alt text](./hello/2024-3-25-image.jpg)
