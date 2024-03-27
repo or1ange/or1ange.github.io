@@ -5,12 +5,11 @@ tags: 计算方法
 ---
 
 
-  
 # 基础知识
 ## 范数
 #### 内积的性质：
 
-1.非负性：$\lt x,x\gt \geq 0 $,if  and only if  x=0,$\lt x,x\gt=0$
+1.非负性：$\lt x,x\gt \geq 0 $, if  and only if  x=0, $ \lt x,x\gt=0 $
 
 2.对称性：$\lt x,y \gt =\lt y,x\gt$
 
@@ -19,6 +18,7 @@ tags: 计算方法
 4.可加性：$\lt x+y,z\gt=\lt x,z\gt+\lt y,z\gt$
 
 #### $l_p$范数
+
 
 $$||x||_p：=（|x_1|^p+|x_2|^p+...+|x_n|^p）^{1/p}$$
 
@@ -29,6 +29,7 @@ $$||x||:= (<x,x>)^{1/2}$$
 when $p=\infty$,
 
 $$||x||_{\infty}=max|x_i|$$
+
 
 
 #### 柯西-施瓦兹不等式
@@ -54,14 +55,16 @@ but the differently,
 
 **算子范数**：
 
-![test](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image-1.jpg)
+![alt text](https://raw.githubusercontent.com/or1ange/or1ange.github.io/master/_posts/convex-optimization/image.jpg)
+
+where $|*|_{m} $ is  the   norm   from  $ R^{m}$ 
 
 
-$where||*||_{m} $ is  the   norm   from  $R^{m}$ 
 
 when m=n=p,got $l_p$ norm。$l_2$ norm is often used,the $l_2$ norm of matrix is its **max singular value**
 
 for all 算子norm：
+
 $||Ax||_{m}\leq||A||_{m,n}||x||_{n}$
 
 **ker-norm(核范数)**：
@@ -79,11 +82,11 @@ $$|<A,B>|\leq||A||_{F}*||B||_{F}$$
 ## 导数（derivative）
 **gradient**
 
-![alt text](./image-1.jpg)
+![alt text](image-1.jpg)
 
-![alt text](./image-2.jpg)
+![alt text](image-2.jpg)
 
-![alt text](./image-3.jpg)
+![alt text](image-3.jpg)
 
 we usually see gradient as a vetcor
 
@@ -92,7 +95,7 @@ we usually see gradient as a vetcor
 ![alt text](image-5.jpg)
 
 **proof**:
-let define a function:$g（t）=f(x+t(y-x)),t\in [0,1]$
+定义一个函数:$g（t）=f(x+t(y-x)),t\in [0,1]$
 
 $f(y)-f(x)-\nabla f(x)^T(y-x)=\int_{0}^{1} g^1(t)- g^1(0) dt$
 $=\int_{0}^{1} (\nabla f(x+t(y-x))-\nabla f(x))(y-x)^Tdt$
@@ -102,7 +105,9 @@ $\leq \int_{0}^{1} Lt|y-x|^2dt=\frac{L}{2}|y-x|^2$
 
 **proved.**
 
-tips:**L-smooth** is telling ,the increasing speed of $f$ is dominant by a type of $x^2$ function.
+tips:**L-光滑** 表明$f$的增长速度被一个二次函数所控制。
+
+
 
 ![alt text](image-7.jpg)
 
@@ -117,17 +122,18 @@ $f(x^*)<f(x)-\frac{1}{2L}||\nabla f(x)||^2$
 # 无约束优化
 ### 线搜索方法
 
-$x^{k+1}=x^{k}+a_kd^{k}$,where **d** represents the **search direction**,**a** represents the **step length**.
+$x^{k+1}=x^{k}+a_kd^{k}$,这里**d**代表搜索方向，**a**是步长。
 
-$d^{T}\nabla f(x^{k})<0$ is  wanted (**down**)
+搜索方向必须满足：$d^{T}\nabla f(x^{k})<0$ (**down**)
 
-we put more attention to how to choose **$a_k$**(**step-length**)
+我们把更多的注意力放在步长**a**的选择上，
 
-exact line search criteria:
+精确线性搜索准则（**exact line search criteria**）:
 
 $$a_k=arg min_{a>0}f(x^k+ad^k)$$
 
-but no-exact line search criteria is more used/popluar:
+实际应用中，计算**a_k**是需要巨大成本的，所以非精确线性搜索准则（ **no-exact line search criteria**）更受到大家欢迎：
+
 
 #### **Armijo criteria**:
 $$f(x^k+ad^k)\leq f(x^k)+c_1a\nabla f(x^k)^Td^k,where~~ c_1\in(0,1)$$
@@ -181,32 +187,37 @@ proof:
 待续
 
 ### 共轭类方法（Conjugate Gradient Method）
-if there exist a equation $AX=b$,we can solve it by solving the optimization question 
+
+如果存在一个线性方程组$Ax=b$,我们可以通过解下面这个最值问题得到它的解。
 $$arg~min_{X}~~ g(x)=\frac{1}{2}X^TAX-b^TX$$
 
-because $g(x)$ is convex-function,whose solution $x^*$($ Ax^*-b=g^{1}(x^*)=0 $)
+因为$g(x)$是凸函数，它的解$x^*$满足以下条件$ Ax^*-b=g^{1}(x^*)=0 $
 #### Conjugate Direction Method
+如果$$p_i^TAp_j=0~~~for~~ all ~~i\ne j$$
+我们就定义“{$p_i$}是关于矩阵A**共轭**的”。
 
-we define {$p_i$} is conjugate (regarding matrix A) ,if $$p_i^TAp_j=0~~~for~~ all ~~i\ne j$$
 
-for given $x_0\in R^n$ and conjuate direction {$p_1,p_1,..,p_n$},the method as below:
+给定初始迭代起点$x_0\in R^n$ 和 共轭方向 {$p_1,p_1,..,p_n$},共轭梯度方法如下:
 
 $$x_{k+1}=x_{k}+\alpha_{k+1}p_{k+1}\\
 \alpha_{k+1}=arg~~min_{\alpha}~~g(x_k+\alpha p_{k+1})\\
 \alpha_{k+1}=-(Ax_k-b)^Tp_{k+1} /(p_{k+1}^TAp_{k+1})$$
 
-**proof:**
+**证明:**
 
-$x^*-x_0=\sigma_1p_1+...+\sigma_np_n~~~~~~~~~~~~~~(1)$
+1.$x^*-x_0=\sigma_1p_1+...+\sigma_np_n$
 
-$p_k^TA（x^*-x_0）=\sigma_k p_k^TAp_k~~~~~~~~~~~~~(2)$
+2.$p_k^TA（x^*-x_0）=\sigma_k p_k^TAp_k$
 
-$p_k^TA（x_{k-1}-x_0）=0~~~~~~~~~~~~~~~~~~~~~~(3)$
+3.$p_k^TA（x_{k-1}-x_0）=0$
 
-$$p_k^TA（x^*-x_0）=p_k^TA（x^*-x_{k-1}）=p_k^T（b-Ax_{k-1}）
+$$\sigma_k p_k^TAp_k=p_k^TA（x^*-x_0）=p_k^TA（x^*-x_{k-1}）\\
+=p_k^T（b-Ax_{k-1}）
 \\=\alpha_k p_k^TAp_k$$
 
-so got $\alpha_k=\sigma_k$
+$\alpha_k=\sigma_k$
 
-**proved.**
+第一处等号由3.得到，第三处等号见上述共轭梯度方法第三式。
 
+
+**得证.**
