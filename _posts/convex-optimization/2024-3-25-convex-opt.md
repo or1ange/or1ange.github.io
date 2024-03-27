@@ -54,7 +54,7 @@ but the differently,
 
 **算子范数**：
 
-![alt text](./2024-3-25-image.jpg)
+![alt text](./hello/2024-3-25-image.jpg)
 
 $where||*||_{m} $ is  the   norm   from  $R^{m}$ 
 
