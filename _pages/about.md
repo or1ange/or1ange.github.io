@@ -24,4 +24,3 @@ My current research interests are mainly focused on Visual Grounding, multimodal
 
 # 📖 Educations
 - *2021.09 - 2025.06(Expected)*, University of Electronic Science and Technology of China, School of Mathematics, Bachelor’s Degree 
-- 
