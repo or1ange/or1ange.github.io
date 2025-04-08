@@ -24,3 +24,11 @@ My current research interests are mainly focused on Visual Grounding, multimodal
 
 # 📖 Educations
 - *2021.09 - 2025.06(Expected)*, University of Electronic Science and Technology of China, School of Mathematics, Bachelor’s Degree 
+
+# 🏆 honors and Awards
+- *2025.06*, Excellent Graduate of Sichuan Province, Sichuan Education Bureau
+- *2024.12*, Model Student Scholarship, [UESTC]
+- *2023.12*, First Prize in Sichuan Provincial Mathematical Modeling Competition
+- *2023.12*, National Scholarship, Ministry of Education, China
+- *2023.12*, Excellent Student Scholarship, [UESTC]
+- *2022.12*, Excellent Student Scholarship, [UESTC]
